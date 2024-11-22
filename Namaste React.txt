@@ -1,0 +1,22 @@
+VS code uses something called "EMMET" that generates code for us.
+
+The <script> tag is used to embed a client-side script(JS)
+
+In an HTML document, the document.createElement() method creates the HTML element specified by tagName, or an HTMLUnknownElement if tagName isn't recognized.
+
+The getElementById() method of the Document interface returns an Element object representing the element whose id property matches the specified string
+
+.appendChild() appends an ID to the list
+
+Read about CORS
+
+Creating a root & rendering something inside it is the job of react DOM
+
+A react element is nothing but a JS object.
+
+.createElement creates an object which converts into HTML when it renders onto the DOM.
+
+When we use root.render(something here) to pass something into the root all the contents of the root will get replaced with whatever we passed.
+
+React is a library which can work in a small portion of the code we specify & touch nothing else.
+
