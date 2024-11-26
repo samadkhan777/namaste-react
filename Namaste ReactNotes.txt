@@ -1,0 +1,81 @@
+VS code uses something called "EMMET" that generates code for us.
+
+The <script> tag is used to embed a client-side script(JS)
+
+In an HTML document, the document.createElement() method creates the HTML element specified by tagName, or an HTMLUnknownElement if tagName isn't recognized.
+
+The getElementById() method of the Document interface returns an Element object representing the element whose id property matches the specified string
+
+.appendChild() appends an ID to the list
+
+Read about CORS
+
+Creating a root & rendering something inside it is the job of react DOM
+
+A react element is nothing but a JS object.
+
+.createElement creates an object which converts into HTML when it renders onto the DOM.
+
+When we use root.render(something here) to pass something into the root all the contents of the root will get replaced with whatever we passed.
+
+React is a library which can work in a small portion of the code we specify & touch nothing else.
+
+NPM doesnt have any full form ( Node package manager is wrong ). NPM is a package manger but doesn't have a full form.
+
+package.json is a configuration for NPM. It keeps track of the approx version intalled on system
+package-lock.json keeps track of every version installed along with current exact version. its imp to put both on github unlike "package.json".
+
+if we have package.json & package-lock.json with us we can recreate all of the node modules which is why we push them to git unlike "package.json". 
+
+A -D before an install command means we are installing the developer version of that thing
+E.g. npm install -D parcel
+
+dependencies can have their own dependencies called transitive dependencies.
+
+npx executes a package
+
+"npx parcel index.html" basically goes to source.html & builds a development build for our App & hosts it to localHost.
+
+Using CDN links( links to download react modules) isn't a good way to bring React into a project coz its a costly operation & as react keeps updating we will have to keep changing the link to the newer versions.
+
+its better to install react & import react in "index.html" as the earlier react was being imported form the CDN links
+e.g. import React from "react".
+
+parcel makes changes to the website in real-time as soon as the code is saved( like live server)
+
+Things that parcel does for us:
+Dev build
+Creates a Local server
+HMR = Hot Module Replacment ( changing website in real-time )
+HMR using File Watching Algorithm - written in C++
+Caching - Faster builds
+Image Optimization -reducing image sizes ( very expensive to load images in web-pages)
+Minification , Bundling , Compressing 
+consistent hashing , Code splitting , Differential Bundling -supports older browsers along with all current 
+Diagnostics , Good error handling, Can host webiste on HTTPs 
+tree shaking - removes unsed code
+Different dev & prod build 
+
+How to use prod build : npx parcel build index.html
+we have to remove the " main : " in pacakge.json to remove the error as main was a way to tell npm the entry point of the app.
+Parcel gives the entry point at "index.html" in "npx parcel build index.html".
+
+When we use " npx parcel index.html" , it generates a dev build & hosts it into the folder "dist".
+
+.parcel-cache & dist should be put in git ignore as these files can be easily regenerated
+
+"browserslist" :[] specifies what browsers &  browser verisons our app will MOST DEFINETLY run ( see browser list.dev website)
+It might run on older versions, it's not guaranteed.
+
+                        EPISODE 3
+
+We can create scripts to automatically create dev & prod builds
+
+Scripts go in "package.json":
+"scripts": {
+    "start": " blah .html",  // this is a dev build
+    "production" : " ", // name of the scripts can be anything
+}
+
+To run a script we just write "npm run start" or "npm start" & it will call the script at "start"
+To build the project write "npm run build".
