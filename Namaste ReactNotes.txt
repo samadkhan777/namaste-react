@@ -79,3 +79,40 @@ Scripts go in "package.json":
 
 To run a script we just write "npm run start" or "npm start" & it will call the script at "start"
 To build the project write "npm run build".
+
+JSX is a JS syntax that makes it easier to create React elemnts.
+
+JSX is not a part of React & isn't compulsory to write React.
+
+JSX is not "HTML inside JS" . It has HTML like syntax.
+
+Browsers are unable to read JSX. Parcel transpiles(converts) JSX into React.createElement() using something called Babel which broswers understand.
+
+Attributes in JSX use camelCase:
+e.g. <h1 className="head" tabIndex="1"></h1>
+
+wrapped with () if code is in multi-lines :
+e.g. (<h1 A="head">
+        blah blah </h1>);
+
+2 types of React components :
+
+Class Based Components - OLD , not used anymore
+Functional components - NEW
+
+A Functional component is a normal JS function which returns some JSX code/react element or bunch of react elements.
+
+A functional componet name starts with a capital letter( unlike react elements that use camelCase)
+
+Two ways to write return code when using arrow func which return the same thing :
+
+const HeadingComponent = () => {
+    return <h1 className ="heading">namsate react fucntional componet</h1>;
+};
+
+const HeadingComponent = () => (
+    <h1 className ="heading">namsate react fucntional componet</h1>;
+);
+
+To render a component using JSX:
+root.render( <HeadingComponent />);
