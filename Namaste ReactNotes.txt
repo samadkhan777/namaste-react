@@ -116,3 +116,39 @@ const HeadingComponent = () => (
 
 To render a component using JSX:
 root.render( <HeadingComponent />);
+
+To render a component inside another componet:
+
+    const a = () => <h1> </h1>
+
+    const b = () => (
+        <div>
+            <a />
+            <h1> </h1>
+        </div>    
+    );
+
+    root.render(<b>);
+
+This is also called "Component Composition".
+
+To return a function without the arrow functions using JSX:
+
+    const HeadingComponent = ()  {
+        return (
+            <h1 className ="heading">namsate react using JSX</h1>;
+        );
+    }; 
+
+We can inject any JS code in JSX just by writing that code inside {}.
+e.g.
+
+    const number  = 10;
+
+    const HeadingComponent = ()  (
+        <div id="container">
+            <h2>{console.log("blah blah )}</h2>   // this will print blah blah in the console
+            <h3>{number + 100}                    // this will print 110 in the main page
+            <h1 className ="heading">namsate react using JSX</h1>;
+        </div>
+    ); 
