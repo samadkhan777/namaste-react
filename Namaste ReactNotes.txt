@@ -152,3 +152,6 @@ e.g.
             <h1 className ="heading">namsate react using JSX</h1>;
         </div>
     ); 
+
+    We can put anything inside anything in JSX
+    e.g. React element inside a react elemnt , react elemnt inside a functional component,  a functional into functional.
