@@ -123,7 +123,8 @@ To render a component inside another componet:
 
     const b = () => (
         <div>
-            <a />
+            <a />   <!-- This can also be written as <a></a> --!> 
+            <a></a> <!-- no limit to how many times this can be called !-->
             <h1> </h1>
         </div>    
     );
@@ -155,3 +156,14 @@ e.g.
 
     We can put anything inside anything in JSX
     e.g. React element inside a react elemnt , react elemnt inside a functional component,  a functional into functional.
+
+    JSX prevents cross-site scripting attacks for us( checks the data for malicious code ).
+
+We can even call a function inside JSX.
+
+e.g. 
+    const a =() =>( <h1>Y</h1 );
+
+    const b = () => ( <div> {a()} </div> );
+
+can also be called as : <a /> 0r <a></a>.    
