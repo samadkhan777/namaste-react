@@ -166,7 +166,9 @@ e.g.
 
     const b = () => ( <div> {a()} </div> );
 
-can also be called as : <a /> 0r <a></a>.    
+can also be called as : <a /> 0r <a></a>.
+
+                        EPISODE 4
 
 A mockup or "wireframe" of our webSite or webPage is very important to build beforehand before building the said website/page
 
@@ -200,16 +202,125 @@ Props are used to dynamically pass data into a component,
 
 since a functional component is just a normal JS func , props are just arguments to a function. 
 
-1: 3: 6
+When making a list in react each of the list item should be given a unique key.
+
+If there a list of RestrauntCards in which the restraunts don't have a key & a new card is entered into the list 
+react will reRender all of the RestrauntCards again as it has no way to differentiate b/w them costing us massive performance.
+
+Whenever we are doing something in loop or making a list it is a good practice to generate keys.
+
+NEVER USE INDEXES AS KEYS AS THE ORDER ITEM MIGHT CHANGE.
+
+// to get cloudinary ID , open image in new tab & check address
 
 
-    JSX prevents cross-site scripting attacks for us( checks the data for malicious code ).
 
-We can even call a function inside JSX.
+1: 3: 6  epi 5
 
-e.g. 
-    const a =() =>( <h1>Y</h1 );
 
-    const b = () => ( <div> {a()} </div> );
+*read about optional chaining
 
-can also be called as : <a /> 0r <a></a>.    
+
+
+
+
+
+::--EPISODE 7--::
+
+If there is no dependency array then useEffect is called on every render of a component.
+
+If the dependency array is empty = [] => useEffect is only called on initial render( just once ).
+
+If there is something in the dependancy array then its only called when the dependancy changes.
+
+e.g. useEffect(() => {
+    console.log("useEffect called");
+}, [btnNameReact]);
+
+here useEffect will be called everytime "btnNameReact" changes.
+
+useState can only be called inside the body component.
+
+It is a good practice to create all the state variables at the top of the component.
+
+Never create state variables inside an if-else statement ,  for loops or functions.
+
+
+                                    EPISODE 7
+
+Configuration is information that tells the browser router what will happen in a specific path/route.
+
+import { createBrowserRouter , RouterProvider}
+
+createBrowserRouter creates a routing configuration for us. It takes a "list" of paths.
+
+RouterProvider provides the routing configuration to our App. It is exported from the react router dom library.
+
+A function starting with "use" is a hook.
+
+"useRouteError" gives us more information about the error.
+
+We should not use anchor tags ( a href = ".." ) in React as it reloads the entire page.
+
+58:30 changes in header..link  component
+
+the "link" component lets us link to different pages ( such as "Contact us" , "About Us" ) without realoading the page.
+It just refreshes the components.
+
+This is why react app's are known as "single page app's ".
+
+Link is a special component provided by react router DOM. It is a wrapper over an anchor tag ( 2:11:00 ).
+Any "link" inside the component link will be tracked by react router DOM 
+
+There are 2 types of routing in web app's:
+-Client Side Routing
+-Server Side Routing ( re-renders the whole page as a network call is made)
+
+A class based component is written as:
+class UserClass extends React.component {
+    render() {
+        return
+    }
+}
+
+Here "extends React.component" lets react know that UserClass is a class based component.
+
+Class Based Component has a render component that returns some piece of JSX.
+
+"React.component" is a Class given to us by react & "userClass" is inhereting some properties from it.
+
+We should never update state variables directly.
+e.g.
+
+"this.state.count = this.state.count + 1 ;" is wrong.
+
+"this.setState()" is used to update state variables in class based components.
+
+e.g. this.setState({
+    count: this.state.count + 1,
+});
+
+When react see a class based component it starts loading it i.e. It goes the component & creates a new instance of this class
+ which means the constructor & then render of that class is called.
+
+ Check lec 8 ; 1:01:01 for lifecycle of Parent constructer , render , component & Child constructor , render & component.
+
+ When using componentDidMount() in a parent & Child constructor,The render/mount sequence will be as follows:
+
+ Parent constructer --> moves to parent child which calls the Child constructor --> render component --> componentDidMount in the child constructor --> back to Parent & then componentDidMount in the parent.
+
+ API calls are made inside of "componentDidMount" as its better to render first while we wait for data.
+
+1:19:20
+
+To check React methods lifecycle diagam: 
+https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+
+Manipulating/updating DOM is an expensive task..react tries to batch things up. 
+
+In class based component , we make an API call in an async componentDidMount() & use await fetch() inside it to fetch an API.
+
+Check the lifecycle of components at 1:47:00 lec 8 .
+
+For more depth into the lifecycle check 2:01:52.
+

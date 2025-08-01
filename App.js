@@ -31,7 +31,8 @@ const RestaurantCard = (props) => {
             src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2025/6/23/6efb660b-047e-489e-8e35-478f79f2ac9f_426730.JPG"
           />
           <h3>{resData.name}</h3>
-          <h4></h4>
+          <h4>{resData.deliveryTime}minutes</h4>
+          <h4>{resData.cuisines.join(", ")}</h4>
         </div>
     );
 };
@@ -53,7 +54,7 @@ const resObj = {
     "avgRatingString": "4.7",
     "totalRatingsString": "6.0K+",
     "sla": {
-    "deliveryTime": 10,
+    "deliveryTime": 11,
     "lastMileTravel": 0.4,
     "serviceability": "SERVICEABLE",
     "slaString": "10-15 mins",
@@ -84,7 +85,6 @@ const AppLayout = () => {
     );
 };
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 
