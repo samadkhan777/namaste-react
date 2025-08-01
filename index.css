@@ -23,14 +23,15 @@
     margin: 10px;
 }
 
-.res-card {
-    margin: 5px;
-    padding: 5px;
+.res-card{
     width: 200px;
-    height: 350px;
+    height: 300px;
+    border: 1px solid black;
 }
 
-.res-logo {
-    width: 100%;
+.search{
+    padding: 10px;
 }
+
+
 

@@ -167,3 +167,49 @@ e.g.
     const b = () => ( <div> {a()} </div> );
 
 can also be called as : <a /> 0r <a></a>.    
+
+A mockup or "wireframe" of our webSite or webPage is very important to build beforehand before building the said website/page
+
+CSS can be written using inlineStyles( not preferred)
+e.g.
+
+const styleCard = {
+}
+
+const RestrauntCard = () => {
+    return(
+        <div className="res-card" style={styleCard} >
+            <h1>Samad</h1>
+        </div>    
+    );
+};
+
+or even :
+
+const RestrauntCard = () => {
+    return(
+        <div className="res-card" style={ {backgroundColor: "grey"0} }> 
+            <h1>Samad</h1>
+        </div>    
+    );
+};
+
+here backgroundColor has 2 curly barces : the first brace is telling us & JSX that the code inside it is "javaScript code" & the second brace tells us that it's  "a javascript object".
+
+Props are used to dynamically pass data into a component,
+
+since a functional component is just a normal JS func , props are just arguments to a function. 
+
+1: 3: 6
+
+
+    JSX prevents cross-site scripting attacks for us( checks the data for malicious code ).
+
+We can even call a function inside JSX.
+
+e.g. 
+    const a =() =>( <h1>Y</h1 );
+
+    const b = () => ( <div> {a()} </div> );
+
+can also be called as : <a /> 0r <a></a>.    
