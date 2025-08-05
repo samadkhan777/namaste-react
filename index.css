@@ -27,10 +27,13 @@
     margin: 5px;
     padding: 5px;
     width: 200px;
-    height: 350px;
 }
 
 .res-logo {
     width: 100%;
+}
+
+.res-container{
+    display: flex;
 }
 

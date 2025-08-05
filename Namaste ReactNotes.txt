@@ -207,7 +207,7 @@ When making a list in react each of the list item should be given a unique key.
 If there a list of RestrauntCards in which the restraunts don't have a key & a new card is entered into the list 
 react will reRender all of the RestrauntCards again as it has no way to differentiate b/w them costing us massive performance.
 
-Whenever we are doing something in loop or making a list it is a good practice to generate keys.
+Whenever we are doing something in loop or making a list , ALWAYS generate keys.
 
 NEVER USE INDEXES AS KEYS AS THE ORDER ITEM MIGHT CHANGE.
 
