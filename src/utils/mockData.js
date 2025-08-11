@@ -38,7 +38,7 @@ const resList = [
     ],
     "avgRating": 3.7,
     "parentId": "1030",
-    "avgRatingString": "4.7",
+    "avgRatingString": "3.7",
     "totalRatingsString": "6.0K+",
     "sla": {
     "deliveryTime": 20,

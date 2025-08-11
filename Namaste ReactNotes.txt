@@ -233,12 +233,124 @@ Its a good idea to keep files < 100 lines. Create separate components as needed.
  -useState() --Superpowerful State Variables in React
  -useEffect() 
 
-1: 3: 6  epi 5
+ 
+useState is imported as a named import.
+e.g. import { useState } from "react";
 
 
-*read about optional chaining
+Just as a normal JS variable has a scope inside a function , a "Local State variable" has a scope inside the component.
+
+e.g. of State Variable :
+const [variableName] = useState([]);
+whatever is in the [] becomes the default value of the variable. 
 
 
+Normal JS variab
+le:
+let listOfRestraunts =[];
+
+A "local state variable" in react is very super powerful which is created in a diff way from a normal var by using hooks.
+
+e.g. const [listOfRestraunts , setListOfRestraunts] = useState();
+
+here "setListOfRestraunts" is used to update "listOfRestraunts".
+it is a recommended nomenclature to use "set" before the name of the local state variable. 
+
+We can't modify this variable directly but use .filter() :
+
+const filteredList = listOfRestraunts.filter(
+        (res) => res.data.avgRating > 4
+);
+
+setListOfRestraunts(filteredList);
+
+Whenever a state variable updates , react rerenders the component.
+
+A virtual DOM is a representation of an Actual DOM.
+
+A virtual DOM is a JS object at the end of the day.
+
+React modfies the UI elements after some changes have been made ( e.g. using filter ) by using something called "RECONCILATION ALGORITHM" (react fiber).
+
+A virtual DOM got created when some data was put in listOfRestraunts =[] . When this list was filtered ( i.e. change was made to a state variable) another virtual DOM was created .
+
+When React sees a diff b/w these 2 DOM's using the Reconciliation algorithm then it updates the actual DOM.
+
+
+"React is fast as it is doing efficient DOM manipulation using the Reconciliation algorithm". Basically react can efficiently find out the diff. b/w virtual DOM's & update the UI.
+
+The set part of the declaration of the useState is a trigger for the diff algo to run.
+Whenever the set"listName" is called the algo will run & automatically rerender the component.
+
+We can "destructure on the fly" the way to use useState ( hooks maybe ?? )
+
+e.g.
+const [listOfRestraunts , setListOfRestraunts] = useState();
+
+is the same as:
+const arr = useState(resList);
+const [listOfRestraunts, setListOfRestraunts] = arr;
+
+which is the same as:
+const arr = useState(resList);
+const listOfRestraunts = arr[0];
+const setListOfRestraunts = arr[1];
+
+An older way to make project architecture was "monolith" where all project elements such as API , UI , DB were all bundled together.
+
+A modern way to make projects is using "Microservices" architecture where we have diff service for diff jobs called microservices.
+All these services combined together would make a big app.  
+
+All these services talk to each other depending on use cases which is termed as "separation of consoles" & " a single responsibilty principle" where each 
+ & every service has its own job & noBody is interferring with it.
+
+The microservices can be written in diff languages unlike monolith.
+
+These services each run on diff ports.( 1000 , 1234 ->UI) & all these ports can be mapped to the same domain name.
+
+In react we render pages like this:
+
+Page Loads --> Render --> API call --> Render
+
+This way of rendering has better UX & as react is very fast at rendering, rendering the page twice isnt a issue.
+
+Syntax of useEffect includes a callback function along with a dependancy array.
+
+If we have to do something after a component has rendered , we use useEffect.
+
+const body = () => {
+
+useEffect(()=>{
+    console.log("useEffect Called");
+} , []);
+
+return () }
+
+The callback function is called after the "body" component renders.
+
+If we want to make our component dynamic( something changes in the comp.)  JS variables cant work in this cases.
+We use useState for such cases as react rerenders the component.
+
+const Header =() => {
+
+const[ btnNameReact, setBtnReact] = useState("Login");
+
+return (
+    <div className="nav-items">
+        <ul>
+            <li>Home</li>
+            <li>Cart</li>
+            <button className="login" onClick={() => {setBtnReact("logout);} }
+        </ul>
+    </div>
+);
+}
+
+In the above eg, when onclick is called, react will reRender the entire Header component & not just the "Login" button.
+
+episode 4: 1:45min ; explanation of why onChange is used ??
+
+Whenver we change a local State variable , react triggers a Reconciliation cycle( rerenders the component).
 
 
 
