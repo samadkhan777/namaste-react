@@ -168,7 +168,7 @@ e.g.
 
 can also be called as : <a /> 0r <a></a>.
 
-                        EPISODE 4
+                                EPISODE 4
 
 A mockup or "wireframe" of our webSite or webPage is very important to build beforehand before building the said website/page
 
@@ -211,7 +211,9 @@ Whenever we are doing something in loop or making a list , ALWAYS generate keys.
 
 NEVER USE INDEXES AS KEYS AS THE ORDER ITEM MIGHT CHANGE.
 
-// to get cloudinary ID , open image in new tab & check address
+// to get cloudinary ID , open image in new tab & check 
+
+                                    LEC -5 
 
 Never keep Hard coded data( unchangable data ) in the component folder.
 
@@ -296,6 +298,11 @@ const arr = useState(resList);
 const listOfRestraunts = arr[0];
 const setListOfRestraunts = arr[1];
 
+episode 4: 1:45min ; explanation of why onChange is used ??
+
+
+                                            LEC - 6
+
 An older way to make project architecture was "monolith" where all project elements such as API , UI , DB were all bundled together.
 
 A modern way to make projects is using "Microservices" architecture where we have diff service for diff jobs called microservices.
@@ -324,9 +331,12 @@ useEffect(()=>{
     console.log("useEffect Called");
 } , []);
 
-return () }
+return (rest of the body ) }
 
 The callback function is called after the "body" component renders.
+
+The Fetch API provides a JavaScript interface for making HTTP requests and processing the responses.
+The fetch() function returns a Promise which is fulfilled with a Response object representing the server's response.
 
 If we want to make our component dynamic( something changes in the comp.)  JS variables cant work in this cases.
 We use useState for such cases as react rerenders the component.
@@ -348,14 +358,12 @@ return (
 
 In the above eg, when onclick is called, react will reRender the entire Header component & not just the "Login" button.
 
-episode 4: 1:45min ; explanation of why onChange is used ??
-
 Whenver we change a local State variable , react triggers a Reconciliation cycle( rerenders the component).
 
 
 
 
-::--EPISODE 7--::
+                                ::--EPISODE 7--::
 
 If there is no dependency array then useEffect is called on every render of a component.
 
