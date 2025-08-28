@@ -52,3 +52,16 @@
     height: 400px;
     background-color: gray;
 }
+
+.login {
+    padding: 0 20px;
+    cursor: pointer;
+}
+
+.filter {
+    display: flex;
+}
+
+.search {
+    margin:10px;
+}

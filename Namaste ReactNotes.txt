@@ -343,7 +343,7 @@ We use useState for such cases as react rerenders the component.
 
 const Header =() => {
 
-const[ btnNameReact, setBtnReact] = useState("Login");
+const[ btnNameReact, setBtnNameReact] = useState("Login");
 
 return (
     <div className="nav-items">
@@ -357,12 +357,20 @@ return (
 }
 
 In the above eg, when onclick is called, react will reRender the entire Header component & not just the "Login" button.
+This is the reason why a seemingly const variable appears to be changing its value. As react is re-rendering a new variable
+which might give the impression that a const variable is changing.
+This is one of the great fuctionality of React.
 
-Whenver we change a local State variable , react triggers a Reconciliation cycle( rerenders the component).
+Whenever we change a local State variable , react triggers a Reconciliation cycle( rerenders the component).
 
+onChange is used to input text in a search bar.
+value={searchText} onChange={ (e) => { setSearchText(e.target.value); } }
 
+Here 'e' means event.
 
+Whenever a letter is entered in the search bar react re-renders the entire page. 
 
+                               
                                 ::--EPISODE 7--::
 
 If there is no dependency array then useEffect is called on every render of a component.
