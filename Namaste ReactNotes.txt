@@ -392,8 +392,6 @@ It is a good practice to create all the state variables at the top of the compon
 Never create state variables inside an if-else statement ,  for loops or functions.
 
 
-                                    EPISODE 7
-
 Configuration is information that tells the browser router what will happen in a specific path/route.
 
 import { createBrowserRouter , RouterProvider}
@@ -407,8 +405,6 @@ A function starting with "use" is a hook.
 "useRouteError" gives us more information about the error.
 
 We should not use anchor tags ( a href = ".." ) in React as it reloads the entire page.
-
-58:30 changes in header..link  component
 
 the "link" component lets us link to different pages ( such as "Contact us" , "About Us" ) without realoading the page.
 It just refreshes the components.
