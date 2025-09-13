@@ -11,31 +11,34 @@ const RestaurantMenu = () => {
 
     const fetchMenu = async () => {
         const data = await fetch(
-            "https://www.swiggy.com/dapi/restaurants/list/v5?lat=30.3298197&lng=78.0108872&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+            "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=30.3298197&lng=78.0108872&restaurantId=78973&catalog_qa=undefined&submitAction=ENTER"
         );
         const json = await data.json();
         
-        console.log(json);
         setResInfo(json.data);
     };
 
     if( resInfo === null ) return <Shimmmer />;
 
-    const {name ,cuisines , costForTwo  } = resInfo?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants[0]?.info || {}; 
+    const itemCards  =
+        resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[3]?.card?.card?.itemCards || [];
+
+    console.log(itemCards);
 
     return (
-        <div className="menu">
-            <h1>{name}</h1>
-            <p>
-                {cuisines.join(", ")} - {costForTwo}
-            </p>
-            <ul>
-                <li>Biryani</li>
-                <li>Burgers</li>
-                <li>Diet Coke</li>
+        <div>
+            <h1>Menu Items</h1>
+
+             <ul>
+                {itemCards.map( (item) =>(
+                    <li key ={ item.card.info.id }>
+                        {item.card.info.name} - ₹{ (item.card.info.price || item.card.info.defaultPrice) /100 } 
+                    </li>
+                ))}
             </ul>
-        </div>
+        
+        </div>     
     );
-};
+};  
 
 export default RestaurantMenu;
