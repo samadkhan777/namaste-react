@@ -420,6 +420,10 @@ There are 2 types of routing in web app's:
 
 A class based component is written as:
 class UserClass extends React.component {
+    constructor(props) {
+        super(props);
+    }
+
     render() {
         return
     }
@@ -430,6 +434,9 @@ Here "extends React.component" lets react know that UserClass is a class based c
 Class Based Component has a render component that returns some piece of JSX.
 
 "React.component" is a Class given to us by react & "userClass" is inhereting some properties from it.
+
+In a class based component we use a constructor to pass data as props.
+
 
 We should never update state variables directly.
 e.g.
@@ -442,7 +449,7 @@ e.g. this.setState({
     count: this.state.count + 1,
 });
 
-When react see a class based component it starts loading it i.e. It goes the component & creates a new instance of this class
+When react sees a class based component it starts loading it i.e. It goes the component & creates a new instance of this class
  which means the constructor & then render of that class is called.
 
  Check lec 8 ; 1:01:01 for lifecycle of Parent constructer , render , component & Child constructor , render & component.
