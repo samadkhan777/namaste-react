@@ -437,6 +437,7 @@ Class Based Component has a render component that returns some piece of JSX.
 
 In a class based component we use a constructor to pass data as props.
 
+this.state() is used to create a variable inside a class based comp.
 
 We should never update state variables directly.
 e.g.
