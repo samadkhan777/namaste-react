@@ -474,3 +474,10 @@ Check the lifecycle of components at 1:47:00 lec 8 .
 
 For more depth into the lifecycle check 2:01:52.
 
+When a file name starts with "use" React will understand that the file is a hook.
+
+It's the recommended practice to start the names of component files with a capital letter & to write useFileName for a hook.
+
+Chunking / Code splitting / Dynamic bundling is breaking down the app into smaller logical chunks.
+
+
