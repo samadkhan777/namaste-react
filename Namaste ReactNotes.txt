@@ -478,6 +478,7 @@ When a file name starts with "use" React will understand that the file is a hook
 
 It's the recommended practice to start the names of component files with a capital letter & to write useFileName for a hook.
 
-Chunking / Code splitting / Dynamic bundling is breaking down the app into smaller logical chunks.
+Chunking / Code splitting / Dynamic bundling / Dynamic Import  is breaking down the app into smaller logical chunks.
 
-
+It's also known as "Lazy loading"/"On Demand Loading" as we don't load everything but only when required.
+ 
